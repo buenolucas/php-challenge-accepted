@@ -1,0 +1,26 @@
+{
+    "name": "buenolucas/cached-request",
+    "description": "Challenge Test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Lucas Bueno",
+            "email": "buenolucasbr@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-redis": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+    "scripts": {
+        "test": "@php -d xdebug.remote_autostart=Off -d xdebug.remote_enable=Off vendor/bin/phpunit"
+    }
+}
