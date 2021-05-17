@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CrossKnowledge - Code challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto";
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .card {
+            border: 1px solid #E7E7E7;
+            width: 324px;
+            background-color: #F7F7F7;
+        }
+
+        .card__header {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .card__hbox {
+            flex-grow: 1;
+        }
+
+        .card__hextra {
+            font-weight: 400;
+        }
+
+        .card__title {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .card__excerpt {
+            font-weight: 300;
+        }
+
+        .card__icon {
+            width: 21px;
+            height: 21px;
+            align-self: center;
+        }
+
+        .card__poster {
+            position: relative;
+        }
+
+        .card__cta {
+            position: absolute;
+            min-width: 210px;
+            left: 57px;
+            bottom: 40px;
+            align: center;
+            background-color: #A6A5A5;
+            border: 1px solid #FFFFFF;
+            font-weight: 400;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 22px;
+            padding: 10px 30px 11px;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .card__footer {
+            font-size: 16px;
+            font-weight: 300;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<article class="card">
+    <header class="card__header">
+        <div class="card__hbox">
+            <div class="card__title">
+                Avengers: Infinity War
+            </div>
+            <div class="card__excerpt">
+                156 minutes
+            </div>
+        </div>
+        <div class="card__hextra">
+            85% <img align="center" class="card__icon"
+                     src="https://www.rottentomatoes.com/assets/pizza-pie/images/icons/global/cf-lg.3c29eff04f2.png"
+                     alt="">
+        </div>
+    </header>
+
+    <div class="card__poster">
+        <img src="https://i.ibb.co/9tLcR7s/avengers.jpg">
+        <a class="card__cta" href="https://www.rottentomatoes.com/m/avengers_infinity_war" target="_blank">
+            Check review
+        </a>
+    </div>
+
+    <footer class="card__footer">
+        <p>
+            An unprecedented cinematic journey ten years in the making and spanning the entire Marvel Cinematic
+            Universe, Marvel Studios' "Avengers: Infinity War" brings to the screen the ultimate, deadliest showdown of
+            all time. The Avengers and their Super Hero allies must be willing to sacrifice all in an attempt to defeat
+            the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
+        </p>
+    </footer>
+</article>
+</body>
+</html>
