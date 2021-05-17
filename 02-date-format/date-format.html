@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CrossKnowledge - Code challenge</title>
+    <script>
+        function formatDate(date, current) {
+            const diffTime = Math.abs(current - date)/1000;
+            if(diffTime<60) {
+                let interval = Math.floor(diffTime);
+                return interval + (interval > 1 ? " seconds" : " second")
+            } else if (diffTime < 60*60) {
+                let interval = Math.floor(diffTime/60);
+                return interval + (interval > 1 ? " minutes" : " minute")
+            } else if (diffTime < 60*60*24) {
+                let interval = Math.floor(diffTime/60/60);
+                return interval + (interval > 1 ? " hours" : " hour")
+            } else {
+                return date.toISOString();
+            }
+        }
+
+        function updateDates() {
+            const currentTime = new Date();
+            const elements = document.querySelectorAll(".js-date-format");
+            elements.forEach((element)=> {
+                const startetAt = new Date(element.getAttribute('data-started-at'));
+                const displayDiff = formatDate(startetAt, currentTime);
+                if(displayDiff != element.innerHTML) {
+                    element.innerHTML = displayDiff;
+                }
+            });
+        }
+
+        function start() {
+            const elements = document.querySelectorAll(".js-date-format");
+            elements.forEach((item) => {
+                item.setAttribute('data-started-at',item.innerHTML)
+            });
+            updateDates();
+            var intervalId = window.setInterval(function(){
+                updateDates();
+            }, 1000);
+        }
+
+        window.onload = function() {
+            start();
+        }
+    </script>
+</head>
+<body>
+<script>
+    // This will create elements for testing, DO NOT change this code
+    (() => {
+        const MS_PER_MINUTE = 60000
+        const NOW = new Date()
+        let minutes = [0, 1, 30, 60, 6 * 60, 23 * 60, 24 * 60]
+        let dates = []
+
+        minutes.forEach((i) => dates.push(new Date(NOW - i * MS_PER_MINUTE)))
+
+        dates.forEach((item) => {
+            let el = document.createElement("div")
+            el.innerHTML = "Started "
+
+            let dt = document.createElement('span')
+            dt.className = 'js-date-format'
+            dt.innerHTML = item.toISOString()
+            el.appendChild(dt)
+            document.body.appendChild(el)
+        })
+    })();
+</script>
+</body>
+</html>
